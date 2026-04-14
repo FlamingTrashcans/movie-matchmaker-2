@@ -2,6 +2,8 @@ import React from 'react'
 import Footer from '../../components/Footer/Footer'
 import MovieCards from '../../components/MovieCards/MovieCards'
 import Navbar from '../../components/Navbar/Navbar'
+import Footer from '../../components/Footer/Footer'
+import MovieCards from '../../components/MovieCards/MovieCards'
 
 const Home = () => {
   return (
@@ -30,6 +32,7 @@ const Home = () => {
                     </div> 
                 </div>
         </div>
+        <MovieCards/>
         <Footer/>
     </>
   )

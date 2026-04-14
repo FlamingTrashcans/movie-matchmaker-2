@@ -1,11 +1,5 @@
 import React from 'react'
-
-const Login = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+import 'Login.css'
+import logo from '../../assets/movie-matchmaker-logo.png'
 
 export default Login

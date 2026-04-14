@@ -1,11 +1,12 @@
 import React from 'react'
+import logo from '../../assets/movie-matchmaker-logo.png'
 
 const Navbar = () => {
   return (
     <nav>
        <div class="nav__wrapper"> 
         <div class="logo">
-            <img class="logo__img" src="4.1Pics/movie matchmaker logo.png" alt="Movie Matchmaker"/>
+            <img class="logo__img" src={logo} alt="Movie Matchmaker"/>
         </div>
         <div class="nav__links">
             <a class="nav__link" href="#">Home</a>

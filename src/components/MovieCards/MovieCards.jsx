@@ -1,4 +1,5 @@
 import React from 'react'
+import movie_reel from '../../assets/Movie-reel.svg.png'
 
 const MovieCards = () => {
   return (
@@ -9,7 +10,7 @@ const MovieCards = () => {
                                 <h4 class="movie__year">19XX</h4>
                                 <div class="movie__poster">
                                     <div class="movie__poster--wrapper">
-                                        <img src="./4.1Pics/Movie-reel.svg.png" alt="" class="poster__placeholder"/>
+                                        <img src={movie_reel} alt="" class="poster__placeholder"/>
                                     </div>
                                 </div>
                                 <button class="btn">Rent Now!</button>
