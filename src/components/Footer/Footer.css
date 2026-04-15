@@ -1,0 +1,17 @@
+.footer__container {
+    display: flex;
+    justify-content: center;
+    background-color: #1f1d1d;
+}
+
+.footer__social--links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 20%;
+}
+
+.footer__social--link {
+    padding: 24px;
+}

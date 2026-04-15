@@ -1,17 +1,18 @@
 import React from 'react'
 import logo from '../../assets/movie-matchmaker-logo.png'
+import './Navbar.css'
 
 const Navbar = () => {
   return (
     <nav>
-       <div class="nav__wrapper"> 
-        <div class="logo">
-            <img class="logo__img" src={logo} alt="Movie Matchmaker"/>
+       <div className="nav__wrapper"> 
+        <div className="logo">
+            <img className="logo__img" src={logo} alt="Movie Matchmaker"/>
         </div>
-        <div class="nav__links">
-            <a class="nav__link" href="#">Home</a>
-            <a class="nav__link find--movie" href="/find-a-movie.html">Find a Movie</a>
-            <button class="btn">Contact</button>
+        <div className="nav__links">
+            <a className="nav__link" href="#">Home</a>
+            <a className="nav__link find--movie" href="/find-a-movie.html">Find a Movie</a>
+            <button className="btn">Contact</button>
         </div>
        </div> 
     </nav>

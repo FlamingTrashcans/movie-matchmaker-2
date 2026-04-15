@@ -1,0 +1,53 @@
+.movie {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 per row */
+    gap: 24px; /* spacing between cards */
+    padding: 24px;
+}
+
+.movie-card {
+    padding: 16px 16px;
+    border: 2px solid gold;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.movie-card__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.movie__year {
+    color: white;
+}
+
+.movie__name {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.movie__poster {
+    padding: 12px 24px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.movie__poster--wrapper {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+}
+
+.poster__placeholder {
+    height: 100%;
+    width: 100%;
+}
+
+.btn {
+    margin-top: auto;
+}

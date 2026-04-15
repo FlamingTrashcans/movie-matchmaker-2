@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    scroll-behavior: smooth;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+}
+
+.search__btn--find {
+    border-radius: 500px;
+    border: none;
+    color: black;
+    background-color: gold;
+    padding: 8px 24px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.landing__page--wrapper--find {
+    display: flex;
+    justify-content: center;    
+    align-items: flex-start;
+    padding-top: 24px;
+}
+
+
+.searchbar__and__stuff {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.searchbar__title--find {
+    padding-bottom: 32px;
+    font-size: 50px;
+}
+
+.searchbar__subtitle--find {
+    padding-top: 32px;
+    padding-bottom: 24px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.searchbar--wrapper--find {
+    padding-top: 16px;
+}
+
+.search__btn--find {
+    margin-left: 12px;
+    border-radius: 500px;
+    border: none;
+    color: black;
+    background-color: gold;
+    padding: 16px 32px;
+    font-size: 14px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.searchbar--wrapper--find {
+    padding-top: 16px;
+}
+
+.btn__and__form--find {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.search__input {
+    padding: 16px 24px;
+    font-size: 16px;
+    border-radius: 9999px;
+    border: none;
+    outline: none;
+    width: 300px;
+}
+
+.search__btn--find {
+    margin-left: 12px;
+    border-radius: 500px;
+    border: none;
+    color: black;
+    background-color: gold;
+    padding: 16px 32px;
+    font-size: 14px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.searchbar__and__stuff--find {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.curtains {
+    max-width: 80%;
+}
+
+.curtains-wrapper {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    display: flex;
+}
