@@ -5,6 +5,11 @@
     padding-right: 24px;
 }
 
+.nav__links{
+    display: flex;
+    flex-direction: row;
+}
+
 .nav__wrapper {
     display: flex;
     align-items: center;
@@ -23,7 +28,15 @@
     cursor: pointer;
 }
 
+.btn-wrapper{
+    padding-left: 24px;
+}
+
 .logo__img {
     max-width: 50%;
     min-height: 50%;
+}
+
+.sign__out{
+    cursor: pointer;
 }

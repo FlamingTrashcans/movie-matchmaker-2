@@ -1,6 +1,9 @@
 import React from 'react'
 import logo from '../../assets/movie-matchmaker-logo.png'
 import './Navbar.css'
+import { useNavigate } from 'react-router-dom'
+import { logout } from '../../firebase'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
@@ -10,9 +13,12 @@ const Navbar = () => {
             <img className="logo__img" src={logo} alt="Movie Matchmaker"/>
         </div>
         <div className="nav__links">
-            <a className="nav__link" href="#">Home</a>
-            <a className="nav__link find--movie" href="/find-a-movie.html">Find a Movie</a>
-            <button className="btn">Contact</button>
+            <Link className="nav__link" to="/">Home</Link>
+            <Link className="nav__link find--movie" to="/SearchResults" >Find a Movie</Link>
+            <a className='sign__out' onClick={()=>{logout()}}>Sign Out</a>
+            <div className="btn-wrapper">
+              <button className="btn">Contact</button>
+            </div>
         </div>
        </div> 
     </nav>

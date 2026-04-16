@@ -5,3 +5,11 @@
     font-family: "Inter", sans-serif;
     scroll-behavior: smooth;
 }
+
+.search-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;      
+    gap: 16px;                
+    margin: 24px 0;
+}
