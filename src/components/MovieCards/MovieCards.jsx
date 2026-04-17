@@ -1,25 +1,33 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from "react";
 import movie_reel from '../../assets/Movie-reel.svg.png'
 import './MovieCards.css'
+import { Link } from "react-router-dom";
 
-const MovieCards = () => {
+const MovieCards = ({ movies }) => {
+  if (!movies || movies.length === 0) {
+    return <p className="no-movies-found">No matches found!</p>
+  }
+
   return (
-    <div className="movie">
-      {[...Array(12)].map((_, index) => (
-        <div className="movie-card" key={index}>
-          <div className="movie-card__container">
-            <h3 className="movie__name">Movie</h3>
-            <h4 className="movie__year">19XX</h4>
-
-            <div className="movie__poster">
-              <div className="movie__poster--wrapper">
-                <img src={movie_reel} alt="" className="poster__placeholder" />
-              </div>
-            </div>
-
-            <button className="btn">Rent Now!</button>
-          </div>
+    <div className="movie-list">
+      {movies.map((movie) => (
+        <div key={movie.imdbID} className="movie">
+          <div className="movie-card">
+          <h3>{movie.Title}</h3>
+          <p>{movie.Year}</p>
+          <img
+            src={
+              movie.Poster !== "N/A"
+                ? movie.Poster
+                : movie_reel
+            }
+            alt={movie.Title}
+          />
+          <Link to={"/Information"}>
+          <button className="btn">Rent Now!</button>
+          </Link>
         </div>
+      </div>  
       ))}
     </div>
   )

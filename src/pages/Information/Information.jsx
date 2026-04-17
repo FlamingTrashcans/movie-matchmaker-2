@@ -4,13 +4,16 @@ import './Information.css'
 import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
 import back_arrow_icon from '../../assets/back_arrow_icon.png'
+import { Link } from 'react-router-dom'
 
 const Information = () => {
   return (
   <>
     <Navbar/>
       <div className="back_arrow_wrapper">
-        <img src={back_arrow_icon} alt="" className="back_arrow" />
+        <Link to="/SearchResults">
+          <img src={back_arrow_icon} alt="" className="back_arrow" />
+        </Link>  
       </div>
       <div className="info_wrapper">
         <div className="info">
@@ -22,7 +25,7 @@ const Information = () => {
                 <h2 className="movie-title">Title</h2>
                 <h3 className="movie-year">Year</h3>
                 <div className="rent_me-container">
-                  <button className="rent_me">Rent Me!</button>
+                  <Link className="rent_me" to="/Cart">Rent Me!</Link>
                 </div>
               </div>  
               <div className="desc-wrapper">

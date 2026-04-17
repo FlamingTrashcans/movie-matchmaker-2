@@ -1,8 +1,16 @@
 .movie {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 per row */
-    gap: 24px; /* spacing between cards */
-    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.movie-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+    padding-bottom: 32px;
 }
 
 .movie-card {
@@ -11,6 +19,10 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    align-items: center;
+    gap: 10px;
+    object-fit: contain;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 .movie-card__container {
@@ -50,4 +62,12 @@
 
 .btn {
     margin-top: auto;
+}
+
+.no-movies-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 56px;
+    font-weight: bold   ;
 }

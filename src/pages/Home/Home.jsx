@@ -4,8 +4,16 @@ import Navbar from '../../components/Navbar/Navbar'
 import Filter from '../../components/Filter/Filter'
 import './Home.css'
 import SearchBar from '../../components/Searchbar/SearchBar'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
+
+  const navigate = useNavigate();
+
+  function handleSearch(term) {
+  navigate(`/SearchResults?q=${term}`);
+  }
+
   return (
     <div className="page">
       <Navbar />
@@ -21,7 +29,7 @@ const Home = () => {
             </h2>
 
             <div className="searchbar--wrapper--find">
-              <SearchBar />
+              <SearchBar onSearch={handleSearch}/>
             </div>
           </div>
         </div>
