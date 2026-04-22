@@ -12,6 +12,26 @@ import { useLocation, useNavigate } from 'react-router-dom'
 const SearchResults = () => {
   const [movies, setMovies] = useState([])
   const [filteredMovies, setFilteredMovies] = useState([])
+  const [loading, setLoading] = useState(false);
+
+  async function fetchMovies(searchTerm) {
+  setLoading(true);
+
+  const response = await fetch(
+    `https://www.omdbapi.com/?apikey=7f8a3fce&s=${searchTerm}`
+  );
+  const data = await response.json();
+
+  if (data.Search) {
+    setMovies(data.Search);
+    setFilteredMovies(data.Search);
+  } else {
+    setMovies([]);
+    setFilteredMovies([]);
+  }
+
+  setLoading(false);
+}
 
 const location = useLocation();
 

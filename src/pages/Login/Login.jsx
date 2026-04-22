@@ -3,7 +3,7 @@ import './Login.css'
 import logo from '../../assets/movie-matchmaker-logo.png'
 import Footer from '../../components/Footer/Footer'
 import { login, signup } from '../../firebase'
-import spinner from '../../assets/ChatGPT Image Apr 16, 2026, 01_46_39 PM.png'
+import spinner from '../../assets/loading-spiral.png'
 
 function Login() {
 

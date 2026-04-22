@@ -8,6 +8,7 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
 const Cart = () => {
+
   const navigate= useNavigate();
   const location = useLocation();
 
