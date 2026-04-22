@@ -11,6 +11,15 @@
     flex-direction: column;
 }
 
+.movie-title{
+    padding-bottom: 12px;
+}
+
+.movie-year{
+    padding-bottom: 8px;
+}
+
+
 .desc-wrapper{
     padding-top: 32px;
 }
@@ -50,7 +59,7 @@
 }
 
 .rent_me-container {
-    padding-top: 12px;
+    padding-top: 24px;
 }
 
 .back_arrow{
@@ -58,4 +67,8 @@
     max-height: 48px;
     padding-left: 12px;
     padding-top: 12px;
+}
+
+hr{
+    color: gold;
 }

@@ -5,23 +5,32 @@ import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
 import { Link } from 'react-router-dom'
 import { useNavigate, useLocation } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([]);
   const navigate= useNavigate();
   const location = useLocation();
 
+  const [cartItems, setCartItems] = useState([]);
+  useEffect(() => {
+  const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+  setCartItems(storedCart);
+  }, []);
+
+  function removeItem(id) {
+    const updated = cartItems.filter(item => item.imdbID !== id);
+    setCartItems(updated);
+    localStorage.setItem("cart", JSON.stringify(updated));
+  }
+
   return (
     <div>
+    <div className="page-container">
     <Navbar/>
     <div className="back-wrapper">
         <button className="back-to-search" onClick={() => {
-              if (location.state?.from) {
-                navigate(location.state.from);
-              } else {
-                navigate("/SearchResults");
-              }}} >
+          navigate(-1);
+          }} >
           Back to Search
         </button>
     </div>    
@@ -33,30 +42,37 @@ const Cart = () => {
               <p className="empty-cart-text">Nothing in Your Cart</p>
           </div>  
         ) : (
-
-        <div className="item-container">
-            <div className="item_img-container">
-                <img src={movie_reel} alt="" className="item_img" />
+          cartItems.map((item) => (
+            <div className="item-container" key={item.imdbID}>
+              <div className="item_img-container">
+                <img 
+                  src={item.Poster !== "N/A" ? item.Poster : movie_reel} 
+                  alt={item.Title} 
+                  className="item_img" 
+                />
+              </div>
+              <div className="item_info-container">
+                <p className="item_title">{item.Title}</p>
+                <button className="remove" onClick={() => removeItem(item.imdbID)}>
+                  Remove
+                </button>
+              </div>
             </div>
-            <div className="item_info-container">
-                <p className="item_title">Title</p>
-                <p className="item_price">$No Prices in API</p>
-                <input type="number" className="item_quantity" min={0} max={99}/>
-            </div>    
-        </div>
-      )}
+          ))
+        )}
 
         <hr className="divider" />
       </section>
       <section className="price">
         <div className="price-text">
         <h1>Your Total</h1>
-        <p className="total">$API does not include prices</p>
+        <p className="total">$99.99</p>
         </div>
         <div className="button-wrapper">
             <button className="checkout" onClick={() => alert('This function does not work, thank you for viewing!')}>Checkout</button>  
         </div>
       </section>
+    </div>  
     <Footer/>
     </div>
   )

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import Login from './pages/Login/Login'
@@ -32,7 +32,7 @@ const App = () => {
         <Route path='/Login' element={<Login/>}></Route>
         <Route path="/Information/:id" element={<Information />} />
         <Route path='/SearchResults' element={<SearchResults/>}></Route>
-        <Route path='/Cart' element={<Cart/>}></Route>
+        <Route path='/Cart' element={<Cart />}></Route>
       </Routes>
     </div>
   )

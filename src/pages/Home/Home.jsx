@@ -5,6 +5,7 @@ import Filter from '../../components/Filter/Filter'
 import './Home.css'
 import SearchBar from '../../components/Searchbar/SearchBar'
 import { useNavigate } from 'react-router-dom'
+import movie_reel from '../../assets/Movie-reel.svg.png'
 
 const Home = () => {
 
@@ -30,6 +31,9 @@ const Home = () => {
 
             <div className="searchbar--wrapper--find">
               <SearchBar onSearch={handleSearch}/>
+            </div>
+            <div className="no-movies-pic-wrapper">
+              <img src={movie_reel  } alt="" className="no-movies-pic" />
             </div>
           </div>
         </div>

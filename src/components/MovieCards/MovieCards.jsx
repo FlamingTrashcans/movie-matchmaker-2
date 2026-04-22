@@ -8,7 +8,7 @@ const MovieCards = ({ movies }) => {
 const location = useLocation();
  
   if (!movies || movies.length === 0) {
-    return <p className="no-movies-found">No matches found!</p>
+    return <p className="no-movies-found">No matches found, search to find your Match!</p>
   }
 
   return (

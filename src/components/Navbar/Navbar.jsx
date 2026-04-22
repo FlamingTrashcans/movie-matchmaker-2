@@ -17,7 +17,9 @@ const Navbar = () => {
             <Link className="nav__link find--movie" to="/SearchResults" >Find a Movie</Link>
             <a className='sign__out' onClick={()=>{logout()}}>Sign Out</a>
             <div className="btn-wrapper">
-              <button className="btn">Contact</button>
+              <Link to={'/Cart'}>
+                <button className="btn">My Cart</button>
+              </Link>
             </div>
         </div>
        </div> 

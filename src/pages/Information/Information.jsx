@@ -15,6 +15,17 @@ const Information = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
 
+function addToCart(movie) {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  const exists = cart.find(item => item.imdbID === movie.imdbID);
+
+  if (!exists) {
+    const updated = [...cart, { ...movie, quantity: 1 }];
+    localStorage.setItem("cart", JSON.stringify(updated));
+  }
+}
+
   useEffect(()=>{
     async function fetchMovie() {
       const res = await fetch(
@@ -58,8 +69,9 @@ const Information = () => {
               <div className="info-header">            
                 <h2 className="movie-title">{movie.Title}</h2>
                 <h3 className="movie-year">{movie.Year}</h3>
+                <hr />
                 <div className="rent_me-container">
-                  <Link className="rent_me" to={'/Cart'} state={{ from: location }}>Rent Me!</Link>
+                  <Link className="rent_me" to={'/Cart'} onClick={() => addToCart(movie)}>Rent Me!</Link>
                 </div>
               </div>  
               <div className="desc-wrapper">

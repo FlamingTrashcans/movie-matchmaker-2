@@ -1,7 +1,11 @@
 .item-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: space;
     align-items: center;
+    justify-content: space-between;
+    max-width: 85%;
+    padding-top: 32px;
+    padding-bottom: 16px;
 }
 
 .item_info-container{
@@ -12,8 +16,8 @@
 }
 
 .item_img{
-    max-width: 10%;
-    max-height: 10%;
+    max-width: 25%;
+    max-height: 25%;
 }
 
 Footer{
@@ -50,7 +54,7 @@ cursor: pointer;
 }
 
 section{
-    padding-left: 36px;
+    padding-left: 56px;
 }
 
 .price-text{
@@ -84,4 +88,14 @@ cursor: pointer;
     padding-top: 32px;
     padding-bottom: 32px;
     font-size: 32px;    
+}
+
+.remove{
+    border-radius: 500px;
+    border: none;
+    color: black;
+    background-color: gold;
+    padding: 8px 24px;
+    font-size: 14px;
+    cursor: pointer;
 }
