@@ -6,11 +6,23 @@ import Navbar from '../../components/Navbar/Navbar'
 import Filter from '../../components/Filter/Filter'
 import SearchBar from '../../components/Searchbar/SearchBar'
 import './SearchResults.css'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
+
 
 const SearchResults = () => {
   const [movies, setMovies] = useState([])
   const [filteredMovies, setFilteredMovies] = useState([])
+
+const location = useLocation();
+
+  useEffect(()=>{
+    const params = new URLSearchParams(location.search);
+    const query = params.get("q");
+    
+    if (query) {
+      fetchMovies(query);
+    }
+  }, [location.search]);
 
   async function fetchMovies(searchTerm) {
     const response = await fetch(
@@ -57,12 +69,14 @@ const SearchResults = () => {
     setFilteredMovies(sortedMovies)
   }
 
+  const navigate = useNavigate();
+
   return (
     <>
     <div className="page-container">
       <Navbar/>
       <div className="search-controls">
-        <SearchBar onSearch={fetchMovies}/>
+        <SearchBar onSearch={(term) => navigate(`/SearchResults?q=${term}`)}/>
         <Filter onFilterChange={handleFilterChange}/>
       </div>
       <MovieCards movies={filteredMovies}/>
