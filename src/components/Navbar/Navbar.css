@@ -40,3 +40,45 @@
 .sign__out{
     cursor: pointer;
 }
+
+@media (max-width: 500px) {
+.nav__links{
+    display: none;
+    }
+
+.logo__img{
+    max-width: 75%;
+    min-height: 75%;
+    }
+
+.hamburger-icon {
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  z-index: 2000;
+}
+}
+
+@media (max-width: 800px) {
+.nav__links{
+    display: none;
+    }
+
+.logo__img{
+    max-width: 75%;
+    min-height: 75%;
+    }
+}
+
+.hamburger-icon {
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  z-index: 2000;
+}
+
+@media (max-width: 1024px) {
+
+}

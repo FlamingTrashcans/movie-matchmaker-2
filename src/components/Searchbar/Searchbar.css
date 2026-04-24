@@ -3,3 +3,19 @@
     flex-direction: column;
     align-items: center;
 }
+
+@media (max-width: 500px) {
+    .btn__and__form--find{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 800px) {
+    .btn__and__form--find{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+}

@@ -132,3 +132,15 @@ Footer{
     min-height: 50%;
     filter: drop-shadow(0 0 15px rgba(255,255,197));
 }
+
+@media (max-width: 500px) {
+    .searchbar__title--find{
+        text-align: center;
+    }
+}
+
+@media (max-width: 800px) {
+    .searchbar__title--find{
+        text-align: center;
+    }
+}

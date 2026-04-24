@@ -74,5 +74,38 @@
     flex-direction: column;
     align-items: center;
     font-size: 56px;
-    font-weight: bold   ;
+    font-weight: bold;
+}
+
+@media (max-width: 500px) {
+.movie-list{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+
+.no-movies-found{
+    text-align: center;
+}
+
+}
+
+@media (max-width: 800px) {
+.movie-list{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.no-movies-found{
+    text-align: center;
+}
+
+}
+
+@media (max-width: 1024px) {
+    
 }
