@@ -1,11 +1,10 @@
 import React from 'react'
 import logo from '../../assets/movie-matchmaker-logo.png'
 import './Navbar.css'
-import { useNavigate } from 'react-router-dom'
 import { logout } from '../../firebase'
 import { Link } from 'react-router-dom'
 import Hamburger from '../Hamburger/Hamburger'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 const Navbar = () => {
 

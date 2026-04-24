@@ -1,7 +1,6 @@
 import React from 'react'
 import './Searchbar.css'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 
 const SearchBar = ({ onSearch }) => {
 

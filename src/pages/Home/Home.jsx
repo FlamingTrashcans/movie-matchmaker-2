@@ -1,7 +1,6 @@
 import React from 'react'
 import Footer from '../../components/Footer/Footer'
 import Navbar from '../../components/Navbar/Navbar'
-import Filter from '../../components/Filter/Filter'
 import './Home.css'
 import SearchBar from '../../components/Searchbar/SearchBar'
 import { useNavigate } from 'react-router-dom'

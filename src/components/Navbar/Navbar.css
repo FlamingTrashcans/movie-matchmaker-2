@@ -41,42 +41,32 @@
     cursor: pointer;
 }
 
-@media (max-width: 500px) {
-.nav__links{
-    display: none;
-    }
-
-.logo__img{
-    max-width: 75%;
-    min-height: 75%;
-    }
-
-.hamburger-icon {
-  font-size: 28px;
-  color: white;
-  cursor: pointer;
-  position: relative;
-  z-index: 2000;
-}
+.hamburger{
+    display: none; 
 }
 
 @media (max-width: 800px) {
-.nav__links{
+  .nav__links {
     display: none;
-    }
+  }
 
-.logo__img{
+  .hamburger {
+    display: block;
+  }
+
+  .logo__img {
     max-width: 75%;
     min-height: 75%;
-    }
-}
+  }
 
-.hamburger-icon {
+  .hamburger-icon{
   font-size: 28px;
   color: white;
   cursor: pointer;
   position: relative;
   z-index: 2000;
+  }
+  
 }
 
 @media (max-width: 1024px) {

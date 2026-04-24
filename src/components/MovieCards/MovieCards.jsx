@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import movie_reel from '../../assets/Movie-reel.svg.png'
 import './MovieCards.css'
 import { Link } from "react-router-dom";

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import Login from './pages/Login/Login'

@@ -3,14 +3,12 @@ import movie_reel from '../../assets/Movie-reel.svg.png'
 import './Cart.css'
 import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
-import { Link } from 'react-router-dom'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
 const Cart = () => {
 
   const navigate= useNavigate();
-  const location = useLocation();
 
   const [cartItems, setCartItems] = useState([]);
   useEffect(() => {
