@@ -44,20 +44,6 @@ const location = useLocation();
     }
   }, [location.search]);
 
-  async function fetchMovies(searchTerm) {
-    const response = await fetch(
-       `https://www.omdbapi.com/?apikey=7f8a3fce&s=${searchTerm}`
-    )
-    const data = await response.json()
-      if (data.Search) {
-        setMovies(data.Search) 
-        setFilteredMovies(data.Search)
-      } else {
-        setMovies([])
-        setFilteredMovies([])
-      }
-  }
-
     function handleFilterChange(value) {
     let sortedMovies = [...movies]
 
