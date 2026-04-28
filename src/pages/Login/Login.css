@@ -78,14 +78,24 @@ form{
     padding-left: 12px;
 }
 
-@media (max-width: 500px) {
-
+.login-spinner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-@media (max-width: 800px) {
-    
+.spinner {
+    animation: spin 1s linear infinite;
+    max-width: 50%; 
+    max-height: 50%;
 }
 
-@media (max-width: 1024px) {
-    
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
