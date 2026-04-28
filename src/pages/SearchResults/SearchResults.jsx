@@ -7,6 +7,7 @@ import Filter from '../../components/Filter/Filter'
 import SearchBar from '../../components/Searchbar/SearchBar'
 import './SearchResults.css'
 import { useLocation, useNavigate } from 'react-router-dom'
+import spinner from '../../assets/loading-spiral.png'
 
 
 const SearchResults = () => {
@@ -85,6 +86,10 @@ const location = useLocation();
         <SearchBar onSearch={(term) => navigate(`/SearchResults?q=${term}`)}/>
         <Filter onFilterChange={handleFilterChange}/>
       </div>
+      {loading && 
+      <div className='spinner-container'>
+        <img className='spinner' src={spinner} alt="" />
+      </div>}
       <MovieCards movies={filteredMovies}/>
     </div>  
       <Footer/>

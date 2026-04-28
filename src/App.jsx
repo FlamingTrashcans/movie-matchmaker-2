@@ -13,17 +13,23 @@ const App = () => {
   const auth = getAuth()
   const navigate = useNavigate();
 
-  useEffect(()=>{
-    onAuthStateChanged(auth, async (user)=>{
-      if(user){
-        console.log("Logged In");
+useEffect(() => {
+  const unsubscribe = onAuthStateChanged(auth, (user) => {
+    if (user) {
+      console.log("Logged In");
+      if (window.location.pathname === "/login") {
         navigate('/');
-      }else{
-        console.log("Logged Out");
+      }
+    } else {
+      console.log("Logged Out");
+      if (window.location.pathname !== "/login") {
         navigate('/login');
       }
-    })
-  },[])
+    }
+  });
+
+  return () => unsubscribe();
+}, [auth, navigate]);
   
   return (
     <div>
