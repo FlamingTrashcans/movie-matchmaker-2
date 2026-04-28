@@ -73,6 +73,28 @@ hr{
     color: gold;
 }
 
+.spinner-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+    max-width: 50%; 
+    max-height: 50%;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 @media (max-width: 500px) {
 
 }

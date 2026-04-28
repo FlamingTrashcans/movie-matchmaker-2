@@ -7,6 +7,7 @@ import back_arrow_icon from '../../assets/back_arrow_icon.png'
 import { Link } from 'react-router-dom'
 import { useParams, useLocation, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import spinner from '../../assets/loading-spiral.png'
 
 const Information = () => {
   
@@ -38,7 +39,10 @@ function addToCart(movie) {
     fetchMovie();
   }, [id]);
 
-  if (!movie) return <p>Loading...</p>;
+  if (!movie) return       
+      <div className='spinner-container'>
+        <img className='spinner' src={spinner} alt="" />
+      </div>;
 
   return (
 
