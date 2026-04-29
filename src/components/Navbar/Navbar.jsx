@@ -9,11 +9,6 @@ const Navbar = () => {
 
 const [isOpen, setIsOpen] = useState(false);
 const navigate = useNavigate();
-const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-const logout = () => {
-  localStorage.removeItem(isLoggedIn);
-  navigate("/login");
-};
 
   return (
     <nav>
@@ -36,7 +31,7 @@ const logout = () => {
         <div className="nav__links">
             <Link className="nav__link" to="/">Home</Link>
             <Link className="nav__link find--movie" to="/SearchResults">Find a Movie</Link>
-            <Link className='sign__out' onClick={logout} to={"/Login"}>Sign Out</Link>
+            <Link className='sign__out' onClick={() => alert('This function is not programmed for the sake of the project')}>Sign Out</Link>
             <div className="btn-wrapper">
               <Link to={'/Cart'}>
                 <button className="btn">My Cart</button>
