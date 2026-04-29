@@ -1,28 +1,27 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Login.css'
 import logo from '../../assets/movie-matchmaker-logo.png'
 import Footer from '../../components/Footer/Footer'
-import { login, signup } from '../../firebase'
+import { useNavigate } from 'react-router-dom'
 import spinner from '../../assets/loading-spiral.png'
 
 function Login() {
-
+  
 const [signState, setSignState] = useState("Sign In");
 const [name, setName] = useState("");
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
 const [loading, setLoading] = useState(false);
-
-const user_auth = async (event)=>{
+const navigate = useNavigate();
+const user_auth = (event) => {
   event.preventDefault();
   setLoading(true);
-  if(signState==="Sign In"){
-    await login(email, password);
-  }else{
-    await signup(name, email, password);
-  }
-  setLoading(false);
-}
+  setTimeout(() => {
+    localStorage.setItem("isLoggedIn", "true");
+    setLoading(false);
+    navigate("/");
+  }, 750);
+};
 
   return (
     loading? <div className="login-spinner">
@@ -38,13 +37,13 @@ const user_auth = async (event)=>{
         <div className="login-form">
           <h1>{signState}</h1>
           <div className="login-fields-container">
-          <form>
+          <form onSubmit={user_auth}>
             {signState==="Sign Up"?
             <input value={name} onChange={(e)=>{setName(e.target.value)}} type="text" placeholder='Your Name' />:<></>}
             <input value={email} onChange={(e)=>{setEmail(e.target.value)}} type="email" placeholder='email@example.com' />
             <input value={password} onChange={(e)=>{setPassword(e.target.value)}} type="password" placeholder='Password' />
             <div className="btn-container">
-            <button onClick={user_auth} type='submit' className="register-btn">{signState}</button>
+            <button type='submit' className="register-btn">{signState}</button>
           </div>  
           </form>
 

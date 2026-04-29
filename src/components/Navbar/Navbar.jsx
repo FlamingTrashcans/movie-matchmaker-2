@@ -1,14 +1,19 @@
 import React from 'react'
 import logo from '../../assets/movie-matchmaker-logo.png'
 import './Navbar.css'
-import { logout } from '../../firebase'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Hamburger from '../Hamburger/Hamburger'
 import { useState } from 'react'
 
 const Navbar = () => {
 
 const [isOpen, setIsOpen] = useState(false);
+const navigate = useNavigate();
+const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+const logout = () => {
+  localStorage.removeItem(isLoggedIn);
+  navigate("/login");
+};
 
   return (
     <nav>
@@ -30,8 +35,8 @@ const [isOpen, setIsOpen] = useState(false);
 
         <div className="nav__links">
             <Link className="nav__link" to="/">Home</Link>
-            <Link className="nav__link find--movie" to="/SearchResults" >Find a Movie</Link>
-            <Link className='sign__out' onClick={()=>{logout()}}>Sign Out</Link>
+            <Link className="nav__link find--movie" to="/SearchResults">Find a Movie</Link>
+            <Link className='sign__out' onClick={logout} to={"/Login"}>Sign Out</Link>
             <div className="btn-wrapper">
               <Link to={'/Cart'}>
                 <button className="btn">My Cart</button>

@@ -6,30 +6,23 @@ import Login from './pages/Login/Login'
 import Information from './pages/Information/Information'
 import SearchResults from './pages/SearchResults/SearchResults'
 import Cart from './pages/Cart/Cart'
-import { onAuthStateChanged, getAuth } from 'firebase/auth'
 
 const App = () => {
-  
-  const auth = getAuth()
-  const navigate = useNavigate();
+
+const navigate = useNavigate();
 
 useEffect(() => {
-  const unsubscribe = onAuthStateChanged(auth, (user) => {
-    if (user) {
-      console.log("Logged In");
-      if (window.location.pathname === "/login") {
-        navigate('/');
-      }
-    } else {
-      console.log("Logged Out");
-      if (window.location.pathname !== "/login") {
-        navigate('/login');
-      }
-    }
-  });
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  const path = window.location.pathname.toLowerCase();
 
-  return () => unsubscribe();
-}, [auth, navigate]);
+  if (!isLoggedIn && path !== "/login") {
+    navigate("/login", { replace: true });
+  }
+
+  if (isLoggedIn && path === "/login") {
+    navigate("/", { replace: true });
+  }
+}, []);
   
   return (
     <div>
